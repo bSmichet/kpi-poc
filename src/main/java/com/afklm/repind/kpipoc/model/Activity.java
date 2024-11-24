@@ -12,6 +12,9 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.util.Date;
 
+/**
+ * Activity index entity
+ */
 @Getter
 @Setter
 @NoArgsConstructor

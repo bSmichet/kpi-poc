@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
+/**
+ * KPI Service Layer
+ */
 @Service
 @AllArgsConstructor
 public class KpiService {

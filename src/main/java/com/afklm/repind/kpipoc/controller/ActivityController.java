@@ -9,24 +9,42 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Activity Controller REST endpoints layer
+ */
 @Slf4j
 @RestController
 @AllArgsConstructor
 public class ActivityController {
     private final ActivityService activityService;
 
+    /**
+     * Create KPI endpoint
+     *
+     * @param activityDTO activity data
+     */
     @PostMapping("/create")
     public void create(@Valid @RequestBody ActivityDTO activityDTO) {
         log.info("ActivityController create", activityDTO);
         activityService.create(activityDTO.getGin(), activityDTO.getType(), activityDTO.getSignature());
     }
 
+    /**
+     * Merge KPI endpoint
+     *
+     * @param activityDTO activity data
+     */
     @PostMapping("/merge")
     public void merge(@Valid @RequestBody ActivityDTO activityDTO) {
         log.info("ActivityController merge", activityDTO);
         activityService.merge(activityDTO.getGin(), activityDTO.getType(), activityDTO.getSignature());
     }
 
+    /**
+     * Purge KPI endpoint
+     *
+     * @param activityDTO activity data
+     */
     @PostMapping("/purge")
     public void purge(@Valid @RequestBody ActivityDTO activityDTO) {
         log.info("ActivityController purge", activityDTO);

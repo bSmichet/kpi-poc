@@ -2,6 +2,9 @@ package com.afklm.repind.kpipoc.enums;
 
 import lombok.Getter;
 
+/**
+ * KPI Actions Enumeration
+ */
 @Getter
 public enum KpiActionEnum {
     CREATE("create"), PURGE("purge"), MERGE("merge");

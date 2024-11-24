@@ -2,6 +2,9 @@ package com.afklm.repind.kpipoc.dto;
 
 import lombok.*;
 
+/**
+ * Activity DTO object
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

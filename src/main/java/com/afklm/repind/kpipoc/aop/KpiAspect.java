@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 /**
- * Aspect for logging execution of Web REST endpoints.
+ * Aspect for kpi execution of Web REST endpoints.
  */
 @Slf4j
 @AllArgsConstructor
