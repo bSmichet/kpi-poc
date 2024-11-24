@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: kpi-poc
+  elasticsearch:
+    uris: https://my-deployment-79a1b6.es.francecentral.azure.elastic-cloud.com/
+    username: elastic
+    password: NW8UJI6ZUDdI5s5O5Iirx4L5
