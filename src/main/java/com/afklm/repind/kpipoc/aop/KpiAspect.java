@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 /**
- * Aspect for kpi execution of Web REST endpoints.
+ * Aspect for logging execution of Web REST endpoints.
  */
 @Slf4j
 @AllArgsConstructor
@@ -32,34 +32,34 @@ public class KpiAspect {
         // Method Information
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
 
-        log.info("full method description: ", signature.getMethod());
-        log.info("method name: ", signature.getMethod().getName());
-        log.info("declaring type: ", signature.getDeclaringType());
+        log.info("full method description: " + signature.getMethod());
+        log.info("method name: " + signature.getMethod().getName());
+        log.info("declaring type: " + signature.getDeclaringType());
 
         // Method args
         log.info("Method args names:");
         Arrays.stream(signature.getParameterNames())
-                .forEach(s -> log.info("arg name: ", s));
+                .forEach(s -> log.info("arg name: " + s));
 
         log.info("Method args types:");
         Arrays.stream(signature.getParameterTypes())
-                .forEach(s -> log.info("arg type: ", s));
+                .forEach(s -> log.info("arg type: " + s));
 
         log.info("Method args values:");
         Arrays.stream(joinPoint.getArgs())
-                .forEach(o -> log.info("arg value: ", o.toString()));
+                .forEach(o -> log.info("arg value: " + o.toString()));
 
         // Additional Information
-        log.info("returning type: ", signature.getReturnType());
-        log.info("method modifier: ", Modifier.toString(signature.getModifiers()));
+        log.info("returning type: " + signature.getReturnType());
+        log.info("method modifier: " + Modifier.toString(signature.getModifiers()));
         Arrays.stream(signature.getExceptionTypes())
-                .forEach(aClass -> log.info("exception type: ", aClass));
+                .forEach(aClass -> log.info("exception type: " + aClass));
 
         // Method annotation
         Method method = signature.getMethod();
         Kpi accountOperation = method.getAnnotation(Kpi.class);
-        log.info("Account operation annotation: ", accountOperation);
-        log.info("Account operation value: ", accountOperation.action());
+        log.info("Account operation annotation: " + accountOperation);
+        log.info("Account operation value: " + accountOperation.action());
 
         // Create Activity and save it
         Activity activity = new Activity();

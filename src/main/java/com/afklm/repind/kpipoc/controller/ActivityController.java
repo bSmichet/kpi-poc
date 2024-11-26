@@ -5,9 +5,15 @@ import com.afklm.repind.kpipoc.service.ActivityService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.apache.commons.lang3.RandomStringUtils;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 
 /**
  * Activity Controller REST endpoints layer
@@ -51,4 +57,12 @@ public class ActivityController {
         activityService.purge(activityDTO.getGin(), activityDTO.getType(), activityDTO.getSignature());
     }
 
+    /**
+     * Create KPI endpoint : random actions and values
+     */
+    @GetMapping("/random")
+    public void random() {
+        log.info("ActivityController random");
+        activityService.random();
+    }
 }
